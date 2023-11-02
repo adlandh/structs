@@ -73,6 +73,12 @@ func TestExtractEmbedValue(t *testing.T) {
 		require.False(t, ok)
 		require.Empty(t, val)
 	})
+
+	t.Run("extract value of string from non struct", func(t *testing.T) {
+		val, ok := structs.ExtractEmbedValue[string]([]string{"test"})
+		require.False(t, ok)
+		require.Empty(t, val)
+	})
 }
 
 func BenchmarkExtractEmbedValue(b *testing.B) {
@@ -95,12 +101,14 @@ func BenchmarkExtractEmbedValue(b *testing.B) {
 	}
 	b.ResetTimer()
 	b.Run("extract value of embed type Person from Employee", func(b *testing.B) {
+		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {
 			_, _ = structs.ExtractEmbedValue[Person](employee)
 		}
 	})
 
 	b.Run("extract value of embed type ID from Employee", func(b *testing.B) {
+		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {
 			_, _ = structs.ExtractEmbedValue[ID](employee)
 		}
