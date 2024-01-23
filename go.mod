@@ -3,7 +3,7 @@ module structs
 go 1.18
 
 require (
-	github.com/brianvoe/gofakeit/v6 v6.26.3
+	github.com/brianvoe/gofakeit/v6 v6.28.0
 	github.com/stretchr/testify v1.8.4
 )
 
