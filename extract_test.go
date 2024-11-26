@@ -1,8 +1,9 @@
 package structs_test
 
 import (
-	"structs"
 	"testing"
+
+	"github.com/adlandh/structs"
 
 	"github.com/brianvoe/gofakeit/v6"
 	"github.com/stretchr/testify/require"

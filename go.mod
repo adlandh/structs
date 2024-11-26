@@ -1,10 +1,12 @@
-module structs
+module github.com/adlandh/structs
 
-go 1.18
+go 1.21
+
+toolchain go1.23.3
 
 require (
 	github.com/brianvoe/gofakeit/v6 v6.28.0
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 )
 
 require (
